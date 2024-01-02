@@ -14,7 +14,7 @@ function validate() {
     let password = document.getElementById('password').value;
     if ( username == "root" && password == "root") {
         alert ("Login successfully");
-        window.location.href = '../main/index.html';
+        window.location.href = './main/index.html';
         return false;
     }
     else{
