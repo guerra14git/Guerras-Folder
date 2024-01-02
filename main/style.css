@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+body {
+	background-color: #000000;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/*-------Nav bar-------*/
+
+nav{
+  display: flex;
+  position: relative;
+  justify-content:space-between;
+  align-items: center;
+  min-height: 6.5vh;
+  background-color: rgb(8, 8, 8);
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  border-bottom: solid 1px rgba(255, 255, 255, 0.3);
+  z-index: 2;
+}
+
+.logo{
+  color: #fdf5e0;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size:20px;
+  margin-left: 20px;
+}
+.nav-links{
+  display: flex;
+  justify-content: space-around;
+  width: 20%;
+  position:absolute;
+  right:0px;
+  height: 100vh;
+  top: 0;
+  background-color: #0d0e12;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in;
+  border-radius: 5px 0 0 5px;
+  border: solid 1px rgba(255, 255, 255, 0.3);
+  border-right: 0;
+}
+.nav-links li{
+  list-style:none;
+}
+.navs-div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 2px;
+  width: 90%;
+  height: 0%;
+  border-bottom: dotted 2px rgba(255, 255, 255, 0.039);
+}
+.nav-links img {
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in;
+}
+.profile-nav-div {
+  border-bottom: solid 2px rgba(255, 255, 255, 0.568);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: -35px;
+  width: 90%;
+  height: 100px;
+}
+.icon-profile {
+  width: 35px;
+  margin-right: 10px;
+}
+.profile-text {
+  color: #fdf5e0;
+  font-size: 17px;
+  font-weight: bolder;
+}
+.icon-home {
+  width: 19px;
+  margin-right: 10px;
+}
+.icon-calendar, .icon-code, .icon-school {
+  width: 20px;
+  margin-right: 9px;
+}
+.icon-projects {
+  width: 14px;
+  margin-right: 10px;
+}
+.icon-repositories {
+  width: 40px;
+  margin-right: -4px;
+  margin-left: -11px;
+}
+.icon-about {
+  width: 22px;
+  margin-right: 8px;
+}
+.nav-links a{
+  color: #fdf5e0;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight:bold;
+  font-size:14px;
+}
+.nav-active{
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade{
+  from{
+    opacity:0;
+    transform: translateX(50px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .line1{
+  transform: rotate(-45deg) translate(-5.5px,5.5px) scale(0.80);
+  margin-top: 1.55vh;
+}
+
+.toggle .line2{
+  visibility: hidden;
+}
+
+.toggle .line3{
+  transform: rotate(45deg) translate(-7px,-7px) scale(0.80);
+}
+.nav-links a:hover {
+  color: #ada797;
+}
+.nav-links a:active {
+  color: #534e40;
+}
+.burger{
+  display: block;
+  margin-right: 8px;
+  padding-top: 2px;
+  margin-top: auto;
+  margin-bottom: auto;
+  cursor: pointer;
+  width: 45px;
+  height: 35px;
+}
+.burger div{
+  width:25px;
+  height:4px;
+  background-color:#fdf5e0;
+  margin: 5px;
+  transition: all 0.3s ease;
+  margin-right: 20px;
+}
+.menu-right-div {
+  display: flex;
+  height: 100%; 
+  width: 350px;
+  position: fixed; 
+  z-index: 1; 
+  top: 0; 
+  right: 0;
+  background-color: #0d0e12; 
+  overflow-x: hidden; 
+  padding-top: 60px; 
+  border-left: solid 1px rgba(255, 255, 255, 0.3);
+  visibility: visible;
+}
+
+/*---------Side bar---------*/
+
+.container-sidebar {
+  display: flex;
+  height: 100%; 
+  width: 350px;
+  position: fixed; 
+  z-index: 1; 
+  top: 0; 
+  left: 0;
+  background-color: #0d0e12; 
+  overflow-x: hidden; 
+  padding-top: 60px;
+  transition: 0.5s; 
+  border-right: solid 1px rgba(255, 255, 255, 0.3);
+}
+.container-sidebar button {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: rgba(255, 255, 255, 0.442);
+  font-weight: bold;
+  border-radius: 7px;
+}
+.container-sidebar button:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+.close-btn {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  font-size: 27px;
+  top: 80px;
+  margin-right: 15px;
+}
+.open-btn {
+  position: absolute;
+  right: 0;
+  width: 40px;
+  height: 50px;
+  font-size: 27px;
+}
+.change-btn-div {
+  display: flex;
+  width: 0;
+  justify-content: center;
+  align-items: center;
+}
+.content-sidebar {
+  width: 350px;
+}
+
+/*------------Main btns div--------------*/
+.headline-span {
+  color: #fdf5e0b9;
+  font-weight: bolder;
+}
+.bk-btn-div {
+  display: inline-block;
+  width: 55vw;
+  height: 100vh;
+  margin-left: 22.5vw;
+  margin-top: 30px;
+}
+.bk-btn {
+  width: 100%;
+  height: 120px;
+  margin-bottom: 12px;
+  border: solid 1px rgba(255, 255, 255, 0.3);
+  background-color: #0d0e12;
+  color: #fdf5e0b9;
+  font-size: 15px;
+}
+.bk-btn:hover {
+  background-color: #000000;
+}
+.bk-btn:active {
+  transform: scale(0.99);
+}
+#bkBtn {
+  margin-top: 20px;
+}
+@media screen and (max-width:1600px) {
+  .nav-links{
+    width:35%;
+  }
+  .container-sidebar {
+    width: 40px; 
+  }
+  .container-sidebar button {
+    display: flex;
+  }
+  .close-btn {
+    visibility: hidden;
+  }
+  .open-btn {
+    visibility: visible;
+  }
+  .change-btn-div {
+    width: 40px;
+  }
+  .content-sidebar {
+    width: 0;
+  }
+  .bk-btn-div {
+    width: 85vw;
+    margin-left: 9.5vw;
+  }
+  .menu-right-div {
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width:768px){
+  .logo {
+    font-size: 15px;
+    margin-left: 8px;
+  }
+  .burger div {
+    margin-right: 10px;
+    width: 20px;
+    height: 3px;
+  }
+  .toggle .line1{
+    transform: rotate(-45deg) translate(-2px,7.5px) scale(0.70);
+    margin-top: 4.75vh;
+  }
+  .toggle .line3{
+    transform: rotate(45deg) translate(-3.5px,-9.5px) scale(0.70);
+  }
+  .nav-links {
+    width: 60%;
+    height: 100vh;
+    line-height: 14px;
+  }
+  .icon-home {
+    width: 12px;
+  }
+  .icon-calendar, .icon-code, .icon-school {
+    width: 12px;
+    margin-right: 9px;
+  }
+  .icon-projects {
+    width: 9px;
+    margin-right: 10px;
+  }
+  .icon-repositories {
+    width: 28px;
+    margin-right: -4px;
+  }
+  .icon-about {
+    width: 15px;
+    margin-right: 5px;
+  }
+  .nav-links a{
+    color: #fdf5e0;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight:bold;
+    font-size:14px;
+  }
+  .profile-nav-div {
+    height: 80px;
+    margin-top: -10px;
+  }
+  .close-btn {
+    top: 55px;
+  }
+  .bk-btn-div {
+    width: 80vw;
+    position: relative;
+    left: 8%;
+  }
+  .bk-btn {
+    width: 90%;
+  }
+}
+

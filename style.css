@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Dhurjati&display=swap');
+
+html {
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Dhurjati', sans-serif;
+    background: linear-gradient(#080a11, #222426);
+}
+.logo-n {
+    position: fixed;
+    padding: 0;
+    margin-left: 15px;
+    color: #ffffff71;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 5px;
+}
+.logo-y {
+    position: fixed;
+    padding: 0;
+    margin-top: 4px;
+    right: 10px; 
+    color: #ffffff71;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 5px;
+}
+/*--Box--*/
+.login-div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 450px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.45);
+    box-sizing: border-box;
+    box-shadow: -20px 20px 6px rgba(0,0,0,.6);
+    border-radius: 8px;
+    border: 1px solid #ffffffab;
+    letter-spacing: 1px;
+    overflow: hidden;
+}
+.login-div::before {
+    content: '';
+    position: absolute;
+    background-color: rgb(255, 255, 255, 0.1);
+    height: 700px;
+    width: 65px;
+    top: 0;
+    left: -270px;
+    transform: skew(-30deg);
+}
+.login-div:hover:before {
+    animation: slide 0.8s;
+}
+
+@keyframes slide {
+    0%,100% {
+        left: -270px;
+    }
+    50% {
+        left: 130%;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/*--Login Text--*/
+.login-div h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    font-size: 70px;
+    letter-spacing: 6px;
+}
+.login-div h3 {
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    color: red;
+    text-align: center;
+    font-size: 20px;
+}
+.login-div .input-div {
+    position: relative;
+}
+/*--Input Space--*/
+.login-div .input-div input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 4px double #fff;
+    outline: none;
+    background: transparent;
+}
+/*--Username/Password label--*/
+.login-div .input-div label {
+    position: absolute;
+    top: -6px;
+    left: 0;
+    padding: 0 0;
+    margin-left: 1px;
+    font-size: 26px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+/*--Username/Password going up*--*/
+.login-div .input-div input:focus ~ label , 
+.login-div .input-div input:valid ~ label {
+    top: -30px;
+    left: 0;
+    color: #af4eff;
+    font-size: 24px;
+}
+/*--Submit Container--*/
+.login-div .div-submit input {
+    position: relative;
+    display: inline-block;
+    padding: 10px 122px;
+    color: #af4eff;
+    font-size: 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 0;
+    margin-bottom: 10px;
+    letter-spacing: 4px;
+    border: 4px double;
+    background: transparent;
+}
+.login-div .div-submit input:hover {
+    background: #af4eff;
+    color: #fff;
+    font-weight: bolder;
+    border-radius: 2px;
+    box-shadow: 0 0 5px #af4eff,
+                0 0 25px #af4eff,
+                0 0 50px #af4eff;
+}
+.div-submit{
+    margin: 0;
+}
+
+/*--Continue as guest--*/
+.guest {
+    position: relative;
+    width: 229px;
+    display: inline-block;
+    padding: 5px 65.7px;
+    color: #af4eff;
+    font-size: 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 2px;
+    letter-spacing: 4px;
+    border: 4px double;
+}
+.guest:hover {
+    background: #af4eff;
+    color: #fff;
+    font-weight: bolder;
+    border-radius: 2px;
+    box-shadow: 0 0 5px #af4eff,
+                0 0 25px #af4eff,
+                0 0 50px #af4eff;
+}
+.btn-login {
+    visibility: hidden;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    display: inline-block;
+    padding: 5px 10px;
+    color: #af4eff;
+    font-size: 26px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    letter-spacing: 2px;
+    border: 4px double;
+}
+.btn-login:hover {
+    background: #af4eff;
+    color: #fff;
+    font-weight: bolder;
+    border-radius: 2px;
+    box-shadow: 0 0 5px #af4eff,
+                0 0 25px #af4eff,
+                0 0 40px #af4eff;
+}
+/*--Mobile phone version landscape--*/
+
+@media all and (min-device-width:320px) and (max-device-width:900px) and (orientation:landscape)
+{
+
+}
+
+/*--Mobile phone version portrait--*/
+
+@media all and (min-device-width: 370px) and (max-device-height: 900px) and (orientation:portrait)
+{
+    .login-div {
+        width: 350px;
+        transition: .3s;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        visibility: hidden;
+        animation-name: fadeIn, sizeUp;
+        animation-fill-mode: forwards;
+        animation-duration: 2s;
+        box-shadow: -15px 15px 7px rgba(0,0,0,.5);
+    }
+    @keyframes sizeUp{
+        from {
+            transform: scale(0) translate(-50%, -50%);
+        }
+        to {
+            transform: scale(1) translate(-50%, -50%);
+        }
+    }
+    .btn-login {
+        visibility: visible;
+        background: transparent;
+    }
+    .logo-n {
+        font-size: 18px;
+        width: 30%;
+        margin: 0;
+    }
+    .logo-y {
+        font-size: 18px;
+        width: 30%;
+        margin: 0;
+        right: 0;
+    }
+    .login-div h2 {
+        font-size: 35px;
+    }
+    .login-div h3 {
+        font-size: 16px;
+    }
+    .login-div .input-div input {
+        font-size: 16px;
+    }
+    .login-div .input-div label {
+        font-size: 20px;
+    }
+    .login-div .input-div input:focus ~ label , 
+    .login-div .input-div input:valid ~ label {
+        top: -26px;
+        font-size: 16px;
+    }
+    .login-div .div-submit input {
+        padding: 7px 83.5px;
+        font-size: 20px;
+        transition: .5s;
+        margin-top: 5px;
+        letter-spacing: 3px;
+    }
+    .login-div .div-submit input:hover {
+        background: #af4eff;
+        color: #fff;
+        font-weight: bolder;
+        border-radius: 2px;
+        box-shadow: 0 0 5px #af4eff,
+                    0 0 20px #af4eff,
+                    0 0 30px #af4eff;
+    }
+    .guest {
+        width: 173px;
+        padding: 4px 43.5px;
+        font-size: 14px;
+    }
+    .guest:hover {
+        background: #af4eff;
+        color: #fff;
+        font-weight: bolder;
+        border-radius: 2px;
+        box-shadow: 0 0 5px #af4eff,
+                    0 0 20px #af4eff,
+                    0 0 30px #af4eff;
+    }
+}   
+@media all and (max-device-width: 369px) and (orientation:portrait)
+{
+    .login-div {
+        width: 84vw;
+        transition: .3s;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        visibility: hidden;
+        animation-name: fadeIn, sizeUp;
+        animation-fill-mode: forwards;
+        animation-duration: 2s;
+        box-shadow: -15px 15px 7px rgba(0,0,0,.5);
+    }
+    @keyframes sizeUp{
+        from {
+            transform: scale(0) translate(-50%, -50%);
+        }
+        to {
+            transform: scale(1) translate(-50%, -50%);
+        }
+    }
+    .btn-login {
+        visibility: visible;
+        background: transparent;
+    }
+    .logo-n {
+        font-size: 18px;
+        width: 30%;
+        margin: 0;
+    }
+    .logo-y {
+        font-size: 18px;
+        width: 30%;
+        margin: 0;
+        right: 0;
+    }
+    .login-div h2 {
+        font-size: 35px;
+    }
+    .login-div h3 {
+        font-size: 14px;
+    }
+    .login-div .input-div input {
+        font-size: 16px;
+    }
+    .login-div .input-div label {
+        font-size: 20px;
+    }
+    .login-div .input-div input:focus ~ label , 
+    .login-div .input-div input:valid ~ label {
+        top: -26px;
+        font-size: 16px;
+    }
+    .login-div .div-submit input {
+        padding: 7px 51px;
+        font-size: 18px;
+        transition: .5s;
+        margin-top: 5px;
+        letter-spacing: 3px;
+    }
+    .login-div .div-submit input:hover {
+        background: #af4eff;
+        color: #fff;
+        font-weight: bolder;
+        border-radius: 2px;
+        box-shadow: 0 0 5px #af4eff,
+                    0 0 20px #af4eff,
+                    0 0 30px #af4eff;
+    }
+    .guest {
+        width: 172px;
+        padding: 4px 6.3px;
+        font-size: 14px;
+    }
+    .guest:hover {
+        background: #af4eff;
+        color: #fff;
+        font-weight: bolder;
+        border-radius: 2px;
+        box-shadow: 0 0 5px #af4eff,
+                    0 0 20px #af4eff,
+                    0 0 30px #af4eff;
+    }
+}
